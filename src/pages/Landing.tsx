@@ -34,11 +34,22 @@ function AnimatedCounter({ end, suffix = '', prefix = '' }: { end: number; suffi
 
 const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 40 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.7,
+            ease: [0.16, 1, 0.3, 1],
+        },
+    },
 }
 
 const stagger: Variants = {
-    visible: { transition: { staggerChildren: 0.1 } },
+    visible: {
+        transition: {
+            staggerChildren: 0.1,
+        },
+    },
 }
 
 export default function Landing() {

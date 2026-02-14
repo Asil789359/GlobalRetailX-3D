@@ -1,8 +1,6 @@
 import { motion, type Variants } from "framer-motion"
 import {
-    Package, DollarSign, ShoppingCart,
-    Plus, Settings, Star, Eye, ArrowUpRight, ArrowDownRight,
-    Upload, Layers, Edit3, Trash2
+    Star, Eye, Upload, Layers, Edit3, Trash2
 } from 'lucide-react'
 import {
     AreaChart,
@@ -101,7 +99,12 @@ export default function RetailerDashboard() {
                                     boxShadow: '0 8px 32px rgba(0,0,0,0.3)',
                                 }}
                                 labelStyle={{ color: '#fff' }}
-                                formatter={(value: any, name: any) => [value ? `$${value.toLocaleString()}` : '', name]}
+                                formatter={(value, name) => {
+                                    const safeValue = typeof value === "number" ? value : 0
+                                    const safeName = typeof name === "string" ? name : ""
+
+                                    return [`$${safeValue.toLocaleString()}`, safeName]
+                                }}
                             />
                             <Area type="monotone" dataKey="revenue" stroke="#6366f1" fill="url(#revenueGradient)" strokeWidth={2} />
                             <Area type="monotone" dataKey="commission" stroke="#d946ef" fill="url(#commissionGradient)" strokeWidth={2} />

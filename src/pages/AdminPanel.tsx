@@ -13,14 +13,8 @@ import {
   Clock,
   XCircle,
 } from "lucide-react"
-
-import {
-  Shield, Users, Store, DollarSign, TrendingUp, AlertTriangle,
-  Globe, Settings, BarChart3, ArrowUpRight, FileCheck, UserCheck,
-  Ban, Eye, CheckCircle2, Clock, XCircle
-} from 'lucide-react'
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts'
-import { stores, revenueData, globalStats } from '../data/mockData'
+import { stores, revenueData } from '../data/mockData'
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 20 },
@@ -167,7 +161,12 @@ export default function AdminPanel() {
                     border: '1px solid rgba(99, 102, 241, 0.2)',
                     borderRadius: '12px',
                   }}
-                  formatter={(value: number) => [`$${value.toLocaleString()}`, '']}
+                  formatter={(value, name) => {
+                    const safeValue = typeof value === "number" ? value : 0
+                    const safeName = typeof name === "string" ? name : ""
+
+                    return [`$${safeValue.toLocaleString()}`, safeName]
+                  }}
                 />
                 <Area type="monotone" dataKey="commission" stroke="#6366f1" fill="url(#adminCommGrad)" strokeWidth={2} />
                 <Area type="monotone" dataKey="subscriptions" stroke="#d946ef" fill="url(#adminSubGrad)" strokeWidth={2} />
