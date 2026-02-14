@@ -1,6 +1,7 @@
 import { useRef, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, useInView, useScroll, useTransform } from 'framer-motion'
+import type { Variants } from 'framer-motion'
 import {
     ArrowRight, Globe, ShoppingBag, Store, Users, TrendingUp,
     Zap, Shield, CreditCard, Box, Star, ChevronRight, Sparkles,
@@ -31,12 +32,12 @@ function AnimatedCounter({ end, suffix = '', prefix = '' }: { end: number; suffi
     return <span ref={ref}>{prefix}{count.toLocaleString()}{suffix}</span>
 }
 
-const fadeInUp = {
+const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 40 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } },
 }
 
-const stagger = {
+const stagger: Variants = {
     visible: { transition: { staggerChildren: 0.1 } },
 }
 

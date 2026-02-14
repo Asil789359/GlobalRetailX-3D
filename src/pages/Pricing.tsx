@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+
 import { motion } from 'framer-motion'
 import {
     Check, X, Sparkles, Zap, Crown, ArrowRight, Globe,
@@ -115,8 +115,8 @@ export default function Pricing() {
                             <button
                                 onClick={() => setCurrency('USD')}
                                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${currency === 'USD'
-                                        ? 'bg-primary-500/20 text-primary-300'
-                                        : 'text-surface-200/40 hover:text-white'
+                                    ? 'bg-primary-500/20 text-primary-300'
+                                    : 'text-surface-200/40 hover:text-white'
                                     }`}
                             >
                                 🇺🇸 USD
@@ -124,8 +124,8 @@ export default function Pricing() {
                             <button
                                 onClick={() => setCurrency('INR')}
                                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${currency === 'INR'
-                                        ? 'bg-primary-500/20 text-primary-300'
-                                        : 'text-surface-200/40 hover:text-white'
+                                    ? 'bg-primary-500/20 text-primary-300'
+                                    : 'text-surface-200/40 hover:text-white'
                                     }`}
                             >
                                 🇮🇳 INR
@@ -170,8 +170,8 @@ export default function Pricing() {
                                 key={i}
                                 variants={fadeInUp}
                                 className={`relative rounded-3xl ${plan.popular
-                                        ? 'glass border-2 border-primary-500/30 scale-[1.02]'
-                                        : 'glass'
+                                    ? 'glass border-2 border-primary-500/30 scale-[1.02]'
+                                    : 'glass'
                                     } p-8 hover:border-primary-500/20 transition-all duration-500`}
                             >
                                 {plan.popular && (
@@ -207,10 +207,10 @@ export default function Pricing() {
 
                                 <button
                                     className={`w-full py-3.5 rounded-xl font-semibold text-sm transition-all duration-300 mb-8 ${plan.popular
-                                            ? 'bg-gradient-to-r from-primary-600 to-accent-500 text-white shadow-lg shadow-primary-500/25 hover:shadow-accent-500/30 hover:scale-[1.02]'
-                                            : plan.priceUSD === null
-                                                ? 'glass text-white hover:bg-white/10'
-                                                : 'bg-white/5 text-white hover:bg-white/10 border border-white/10'
+                                        ? 'bg-gradient-to-r from-primary-600 to-accent-500 text-white shadow-lg shadow-primary-500/25 hover:shadow-accent-500/30 hover:scale-[1.02]'
+                                        : plan.priceUSD === null
+                                            ? 'glass text-white hover:bg-white/10'
+                                            : 'bg-white/5 text-white hover:bg-white/10 border border-white/10'
                                         }`}
                                 >
                                     {plan.priceUSD === null ? 'Contact Sales' : 'Get Started'}

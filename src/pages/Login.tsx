@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+
 import { motion } from 'framer-motion'
 import { Mail, Lock, User, Store, Eye, EyeOff, Globe, ArrowRight, Sparkles } from 'lucide-react'
 
@@ -50,8 +50,8 @@ export default function Login() {
                             <button
                                 onClick={() => setRole('customer')}
                                 className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-medium transition-all ${role === 'customer'
-                                        ? 'bg-primary-500/20 text-primary-300 border border-primary-500/30'
-                                        : 'glass text-surface-200/40 hover:text-white'
+                                    ? 'bg-primary-500/20 text-primary-300 border border-primary-500/30'
+                                    : 'glass text-surface-200/40 hover:text-white'
                                     }`}
                             >
                                 <User className="w-4 h-4" />
@@ -60,8 +60,8 @@ export default function Login() {
                             <button
                                 onClick={() => setRole('retailer')}
                                 className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-medium transition-all ${role === 'retailer'
-                                        ? 'bg-accent-500/20 text-accent-300 border border-accent-500/30'
-                                        : 'glass text-surface-200/40 hover:text-white'
+                                    ? 'bg-accent-500/20 text-accent-300 border border-accent-500/30'
+                                    : 'glass text-surface-200/40 hover:text-white'
                                     }`}
                             >
                                 <Store className="w-4 h-4" />
